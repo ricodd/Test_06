@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Modify a Student</title>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/student.js"></script>
+    <link rel="stylesheet" href="/css/student.css"/>
+
+</head>
+<body>
+
+    <form method="post" th:action="${'/student/modify/' + student.id}">
+        <table>
+            <tr>
+                <th>New Student Name</th>
+                <td>
+                    <input type="text" name="name" th:value="${student.name}" />
+                </td>
+            </tr>
+            <tr>
+                <th>New Student Age</th>
+                <td>
+                    <input type="text" name="age" th:value="${student.age}"/>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Modify" /></td>
+                <td>
+                    <input type="reset" value="Reset" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <hr/>
+
+    <a href="/student">back to index</a>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>New a Student</title>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/student.js"></script>
+    <link rel="stylesheet" href="/css/student.css"/>
+
+</head>
+<body>
+
+    <form action="/student/new" method="post">
+        <table>
+            <tr>
+                <th>Student Name</th>
+                <td>
+                    <input type="text" name="name" />
+                </td>
+            </tr>
+            <tr>
+                <th>Student Age</th>
+                <td>
+                    <input type="text" name="age" />
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="New" /></td>
+                <td>
+                    <input type="reset" value="Reset" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <hr/>
+
+    <a href="/student">back to index</a>
+
+</body>
+</html>

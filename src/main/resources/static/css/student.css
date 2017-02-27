@@ -1,0 +1,25 @@
+﻿@CHARSET "UTF-8";
+
+* {
+    text-align: center;
+    align-content: center;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width:50%;
+}

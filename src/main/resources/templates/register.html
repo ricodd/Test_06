@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Register</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+
+        #divContent div {
+            margin-top: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+<div style="font-size: 16px; font-style: italic; font-weight: bolder;">Register Page</div>
+
+<div style="margin: auto; width: 400px;" id="divContent">
+    <form action="doRegister.html"
+          method="post">
+        <div>
+            LoginName : <input type="text" name="loginName"/>
+        </div>
+        <div>
+            LoginPassword : <input type="password" name="loginPassword"/>
+        </div>
+        <div>
+            RepeatLoginPassword : <input type="password" name="repeatLoginPassword"/>
+        </div>
+
+        <div>
+            <button>Register</button>
+        </div>
+    </form>
+
+    <hr/>
+
+    <a href="login.html">Login</a>
+</div>
+
+</body>
+</html>

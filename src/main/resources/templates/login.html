@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+
+        #divContent div {
+            margin-top: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div style="font-size: 16px; font-style: italic; font-weight: bolder;">Login Page</div>
+
+<div style="margin: auto; width: 400px;" id="divContent">
+    <form action="doLogin.html"
+          method="post">
+        <div >
+            LoginName : <input type="text" name="loginName"/>
+        </div>
+        <div >
+            LoginPassword : <input type="password" name="loginPassword"/>
+        </div>
+
+        <div>
+            <button>Login</button>
+        </div>
+    </form>
+
+    <hr/>
+
+    <a href="register.html">Register</a>
+    </div>
+</body>
+</html>

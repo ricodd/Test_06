@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>User Index</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: aliceblue;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 th:text="${loginName + ', Welcome to index.'}"></h1>
+    <!-- session 取值-->
+    <!--<h1 th:text="${session.loginName + ', Welcome to index.'}"></h1>-->
+
+    <hr/>
+
+
+
+</body>
+</html>

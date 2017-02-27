@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Student Index</title>
+    <script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/js/student.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/student.css}"/>
+
+</head>
+<body>
+
+    <!--<div th:include="~{header :: time}"></div>-->
+
+    <div class="container">
+        <div class="left">
+            <table class="bordered">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Student Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="student:${pager.list}">
+                        <td>
+                            <input type="checkbox" th:id="${student.id}" />
+                        </td>
+                        <td th:text="${student.id}"></td>
+                        <td th:text="${student.name}"></td>
+                        <td th:text="${student.age}"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--<span th:text="${'当前第' + pager.pagerNO + '页'}"></span>-->
+           <!-- 当前第<span th:text="${pager.pagerNO}" id="divPagerNO"></span>页
+            &nbsp;
+            共<span th:text="${pager.pagerCount}" id="divPagerCount"></span>页
+            &nbsp;
+            <span th:text="${'每页' + pager.pagerSize + '条数据'}"></span>
+            &nbsp;-->
+            <span th:object="${pager}">
+            当前第<span th:text="*{pagerNO}" id="divPagerNO"></span>
+            &nbsp;
+            共<span th:text="*{pagerCount}" id="divPagerCount"></span>页
+            &nbsp;
+            <span th:text="*{'每页' + pagerSize + '条数据'}"></span>
+            &nbsp;
+            </span>
+
+
+            <!--<a th:href="${'?pagerNO=' + (pager.pagerNO + 1)}">下一页</a>-->
+           <!-- <button class="pager" id="btnNext">下一页</button>
+            &nbsp;
+            <button class="pager" id="btnPre">上一页</button>
+            &nbsp;
+            <button class="pager" id="btnFirst">首页</button>
+            &nbsp;
+            <button class="pager" id="btnLast">尾页</button>-->
+
+            <a th:href="${'?limit=' + (pager.pagerNO + 1)}">下一页</a>
+            &nbsp;
+            <a th:href="${'?limit=' + (pager.pagerNO - 1)}">上一页</a>
+            &nbsp;
+            <a th:href="${'?limit=1'}">首页</a>
+            &nbsp;
+            <a th:href="${'?limit=' + (pager.pagerCount)}">尾页</a>
+            &nbsp;
+        </div>
+        <div class="right">
+            <a href="#" id="btnSingle">AJAX a Student Info</a> &nbsp; &nbsp; <a href="#" id="btnList">AJAX StudentList Info</a>
+
+            <img src="/student/showImage" style="width: 80px; height: 60px;"/>
+        </div>
+    </div>
+
+    <hr/>
+
+    <a href="student/new">New a Student</a> &nbsp; &nbsp; &nbsp;
+    <a href="#" id="btnModify">Modify a Student which selected</a> &nbsp; &nbsp; &nbsp;
+    <a href="#" id="btnRemove">Remove a Student which selected</a>
+
+
+
+</body>
+</html>

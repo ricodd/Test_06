@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div th:fragment="time">
+        Toady is : <span th:text="${#calendars.format(today, 'yyyy-MM-dd')}"></span>
+    </div>
+
+
+</body>
+
+<style>
+    div {
+        text-align: center;
+        font-weight: bold;
+        color: cornflowerblue;
+    }
+</style>
+</html>
